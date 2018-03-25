@@ -1,6 +1,6 @@
 {% set name = "python-slugify" %}
-{% set version = "1.2.4" %}
-{% set sha256 = "57a385df7a1c6dbd15f7666eaff0ff29d3f60363b228b1197c5308ed3ba5f824" %}
+{% set version = "1.2.5" %}
+{% set sha256 = "5dbb360b882b2dabe0471a1a92f604504d83c2a73c71f2098d004ab62e695534" %}
 
 package:
   name: {{ name|lower }}
@@ -14,7 +14,7 @@ source:
       - fix_command.patch
 
 build:
-  number: 1
+  number: 0
   script: python setup.py install --single-version-externally-managed --record record.txt
   entry_points:
     - slugify = slugify.cli:main

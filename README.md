@@ -14,14 +14,15 @@ Summary: A Python Slugify application that handles Unicode
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/python-slugify-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/python-slugify-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/python-slugify-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/python-slugify-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/python-slugify-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/python-slugify-feedstock/branch/master)
+All platforms:
+[![noarch](https://img.shields.io/circleci/project/github/conda-forge/python-slugify-feedstock/master.svg?label=noarch)](https://circleci.com/gh/conda-forge/python-slugify-feedstock)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/python-slugify/badges/version.svg)](https://anaconda.org/conda-forge/python-slugify)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/python-slugify/badges/downloads.svg)](https://anaconda.org/conda-forge/python-slugify)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-python--slugify-green.svg)](https://anaconda.org/conda-forge/python-slugify) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/python-slugify.svg)](https://anaconda.org/conda-forge/python-slugify) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/python-slugify.svg)](https://anaconda.org/conda-forge/python-slugify) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/python-slugify.svg)](https://anaconda.org/conda-forge/python-slugify) |
 
 Installing python-slugify
 =========================

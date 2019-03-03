@@ -1,6 +1,6 @@
 {% set name = "python-slugify" %}
-{% set version = "2.0.1" %}
-{% set sha256 = "d3e034397236020498e677a35e5c05dcc6ba1624b608b9ef7e5fe3090ccbd5a8" %}
+{% set version = "3.0.0" %}
+{% set sha256 = "f5c5a43e76ea6820c892c30aba6c8bc1f848fbb8e1cba65ed1c8da7bb2b4c522" %}
 
 package:
   name: {{ name|lower }}

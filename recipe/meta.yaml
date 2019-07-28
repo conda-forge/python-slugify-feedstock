@@ -1,6 +1,5 @@
 {% set name = "python-slugify" %}
-{% set version = "3.0.2" %}
-{% set sha256 = "57163ffb345c7e26063435a27add1feae67fa821f1ef4b2f292c25847575d758" %}
+{% set version = "3.0.3" %}
 
 package:
   name: {{ name|lower }}
@@ -9,7 +8,7 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  sha256: a9f468227cb11e20e251670d78e1b5f6b0b15dd37bbd5c9814a25a904e44ff66
   patches:
       - fix_command.patch
 
@@ -28,21 +27,26 @@ requirements:
 
   run:
     - python
+    - text-unidecode 1.2
     - unidecode >=0.04.16
 
 test:
   imports:
     - slugify
 
+  source_files:
+    - test.py
+
   commands:
     - slugify --help
+    - python test.py
 
 
 about:
   home: https://github.com/un33k/python-slugify
   license: MIT
   license_family: MIT
-  # license_file: LICENSE There is no license in python-slugify
+  license_file: LICENSE
   summary: 'A Python Slugify application that handles Unicode'
   dev_url: https://github.com/un33k/python-slugify
 

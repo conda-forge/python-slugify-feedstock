@@ -1,5 +1,5 @@
 {% set name = "python-slugify" %}
-{% set version = "3.0.3" %}
+{% set version = "3.0.5" %}
 
 package:
   name: {{ name|lower }}
@@ -8,14 +8,14 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: a9f468227cb11e20e251670d78e1b5f6b0b15dd37bbd5c9814a25a904e44ff66
+  sha256: 7dda1c0d7f9ff85c405be412d53b842015db18e32b598d46a805546bc1a66a5b
   patches:
       - fix_command.patch
 
 build:
   noarch: python
   number: 0
-  script: python -m pip install --no-deps --ignore-installed .
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
     - slugify = slugify.cli:main
 

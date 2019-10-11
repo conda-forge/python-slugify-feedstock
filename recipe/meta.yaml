@@ -1,5 +1,5 @@
 {% set name = "python-slugify" %}
-{% set version = "3.0.5" %}
+{% set version = "3.0.6" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 7dda1c0d7f9ff85c405be412d53b842015db18e32b598d46a805546bc1a66a5b
+  sha256: 8653d589308c91c67fe5c97a2afda0cfac9492061e69c0db90d1aef68fcd2332
   patches:
       - fix_command.patch
 

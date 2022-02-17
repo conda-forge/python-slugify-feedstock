@@ -1,5 +1,5 @@
 {% set name = "python-slugify" %}
-{% set version = "5.0.2" %}
+{% set version = "6.0.1" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: f13383a0b9fcbe649a1892b9c8eb4f8eab1d6d84b84bb7a624317afa98159cab
+  sha256: ba72aa9d9f0514c0c3dd4430442f698ccc27a24d19630473663a71e3ec606bc1
 
 build:
   noarch: python

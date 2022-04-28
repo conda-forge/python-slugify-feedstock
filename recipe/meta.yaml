@@ -1,13 +1,14 @@
-{% set name = "python-slugify" %}
-{% set version = "6.1.1" %}
+{% set version = "6.1.2" %}
 
 package:
-  name: {{ name }}
+  name: python-slugify
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 00003397f4e31414e922ce567b3a4da28cf1436a53d332c9aeeb51c7d8c469fd
+  - url: https://pypi.io/packages/source/p/python-slugify/python-slugify-{{ version }}.tar.gz
+    sha256: 272d106cb31ab99b3496ba085e3fea0e9e76dcde967b5e9992500d1f785ce4e1
+  - url: https://raw.githubusercontent.com/un33k/python-slugify/v{{ version }}/test.py
+    sha256: 2cd6220bd1938284a40f70ceb6af6e46fa1d276c62f026dd7ce548780640871d
 
 build:
   noarch: python

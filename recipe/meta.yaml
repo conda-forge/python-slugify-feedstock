@@ -1,4 +1,4 @@
-{% set version = "8.0.0" %}
+{% set version = "8.0.1" %}
 
 package:
   name: python-slugify
@@ -6,7 +6,7 @@ package:
 
 source:
   - url: https://pypi.io/packages/source/p/python-slugify/python-slugify-{{ version }}.tar.gz
-    sha256: f1da83f3c7ab839b3f84543470cd95bdb5a81f1a0b80fed502f78b7dca256062
+    sha256: ce0d46ddb668b3be82f4ed5e503dbc33dd815d83e2eb6824211310d3fb172a27
   - url: https://raw.githubusercontent.com/un33k/python-slugify/v{{ version }}/test.py
     sha256: 2cd6220bd1938284a40f70ceb6af6e46fa1d276c62f026dd7ce548780640871d
 

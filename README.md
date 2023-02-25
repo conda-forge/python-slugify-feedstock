@@ -1,11 +1,11 @@
-About python-slugify
-====================
+About python-slugify-feedstock
+==============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/python-slugify-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/un33k/python-slugify
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/python-slugify-feedstock/blob/main/LICENSE.txt)
 
 Summary: A Python Slugify application that handles Unicode
 

@@ -30,6 +30,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-python--slugify-green.svg)](https://anaconda.org/conda-forge/python-slugify) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/python-slugify.svg)](https://anaconda.org/conda-forge/python-slugify) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/python-slugify.svg)](https://anaconda.org/conda-forge/python-slugify) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/python-slugify.svg)](https://anaconda.org/conda-forge/python-slugify) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-python--slugify--with--unidecode-green.svg)](https://anaconda.org/conda-forge/python-slugify-with-unidecode) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/python-slugify-with-unidecode.svg)](https://anaconda.org/conda-forge/python-slugify-with-unidecode) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/python-slugify-with-unidecode.svg)](https://anaconda.org/conda-forge/python-slugify-with-unidecode) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/python-slugify-with-unidecode.svg)](https://anaconda.org/conda-forge/python-slugify-with-unidecode) |
 
 Installing python-slugify
 =========================
@@ -41,16 +42,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `python-slugify` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `python-slugify, python-slugify-with-unidecode` can be installed with `conda`:
 
 ```
-conda install python-slugify
+conda install python-slugify python-slugify-with-unidecode
 ```
 
 or with `mamba`:
 
 ```
-mamba install python-slugify
+mamba install python-slugify python-slugify-with-unidecode
 ```
 
 It is possible to list all of the versions of `python-slugify` available on your platform with `conda`:

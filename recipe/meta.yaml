@@ -1,6 +1,5 @@
-{% set version = "8.0.1" %}
-
-{% set pytest_args = "pytest test.py -vv --cov=slugify --cov-branch --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=93" %}
+{% set version = "8.0.2" %}
+{% set pytest_args = "pytest test.py -vv --cov=slugify --cov-branch --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=92" %}
 
 package:
   name: python-slugify-split
@@ -8,13 +7,13 @@ package:
 
 source:
   - url: https://pypi.io/packages/source/p/python-slugify/python-slugify-{{ version }}.tar.gz
-    sha256: ce0d46ddb668b3be82f4ed5e503dbc33dd815d83e2eb6824211310d3fb172a27
+    sha256: a1a02b127a95c124fd84f8f88be730e557fd823774bf19b1cd5e8704e2ae0e5e
   - url: https://raw.githubusercontent.com/un33k/python-slugify/v{{ version }}/test.py
-    sha256: 2cd6220bd1938284a40f70ceb6af6e46fa1d276c62f026dd7ce548780640871d
+    sha256: 9920b8e59978fa1a3d3f4a6728a5b4e0bfcfa1804983a117170c2709a28dee6c
 
 build:
   noarch: python
-  number: 2
+  number: 0
 
 requirements:
   host:

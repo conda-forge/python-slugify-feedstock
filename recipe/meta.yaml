@@ -1,4 +1,5 @@
-{% set version = "8.0.2" %}
+{% set pytest_args = "pytest test.py -vv --cov=slugify --cov-branch --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=92" %}
+{% set version = "8.0.3" %}
 {% set pytest_args = "pytest test.py -vv --cov=slugify --cov-branch --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=92" %}
 
 package:
@@ -7,7 +8,7 @@ package:
 
 source:
   - url: https://pypi.io/packages/source/p/python-slugify/python-slugify-{{ version }}.tar.gz
-    sha256: a1a02b127a95c124fd84f8f88be730e557fd823774bf19b1cd5e8704e2ae0e5e
+    sha256: e04cba5f1c562502a1175c84a8bc23890c54cdaf23fccaaf0bf78511508cabed
   - url: https://raw.githubusercontent.com/un33k/python-slugify/v{{ version }}/test.py
     sha256: 9920b8e59978fa1a3d3f4a6728a5b4e0bfcfa1804983a117170c2709a28dee6c
 

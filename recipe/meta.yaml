@@ -1,4 +1,3 @@
-{% set pytest_args = "pytest test.py -vv --cov=slugify --cov-branch --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=92" %}
 {% set version = "8.0.3" %}
 {% set pytest_args = "pytest test.py -vv --cov=slugify --cov-branch --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=92" %}
 

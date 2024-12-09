@@ -6,22 +6,24 @@ package:
   version: {{ version }}
 
 source:
-  - url: https://pypi.io/packages/source/p/python-slugify/python-slugify-{{ version }}.tar.gz
+  - url: https://pypi.org/packages/source/p/python-slugify/python-slugify-{{ version }}.tar.gz
     sha256: 59202371d1d05b54a9e7720c5e038f928f45daaffe41dd10822f3907b937c856
   - url: https://raw.githubusercontent.com/un33k/python-slugify/v{{ version }}/test.py
     sha256: 96a2fb00cb9a225c473cd0bcfab01286f16d47b51368a986a250e00a50ddcc92
 
 build:
   noarch: python
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
   run:
-    - python >=3.7
+    - python >={{ python_min }}
 
 test:
+  requires:
+    - python {{ python_min }}
   commands:
     - exit 0
 
@@ -35,9 +37,9 @@ outputs:
     requirements:
       host:
         - pip
-        - python >=3.7
+        - python {{ python_min }}
       run:
-        - python >=3.7
+        - python >={{ python_min }}
         - text-unidecode >=1.3
       run_constrained:
         # ships slugify in site-packages and bin
@@ -50,6 +52,7 @@ outputs:
         requires:
           - pip
           - pytest-cov
+          - python {{ python_min }}
         imports:
           - slugify
         source_files:
@@ -64,15 +67,16 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python >=3.7
+        - python {{ python_min }}
       run:
         - {{ pin_subpackage("python-slugify", max_pin="x.x.x") }}
-        - python >=3.7
+        - python >={{ python_min }}
         - unidecode
     test:
       requires:
         - pip
         - pytest-cov
+        - python {{ python_min }}
       imports:
         - slugify
       source_files:

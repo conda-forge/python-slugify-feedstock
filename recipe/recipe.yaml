@@ -17,12 +17,6 @@ source:
 
 build:
   number: 0
-  noarch: python
-  script:
-    - ${{ PYTHON }} -m pip install . --no-deps -vv --no-build-isolation --disable-pip-version-check
-  python:
-    entry_points:
-      - slugify = slugify.__main__:main
 
 outputs:
   - package:

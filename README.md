@@ -3,11 +3,11 @@ About python-slugify-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/python-slugify-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/un33k/python-slugify
+Home: https://pypi.org/project/python-slugify
 
 Package license: MIT
 
-Summary: A Python Slugify application that handles Unicode
+Summary: A Python slugify application that also handles Unicode
 
 Development: https://github.com/un33k/python-slugify
 

@@ -63,9 +63,8 @@ outputs:
             - test.py
         requirements:
           run:
-            - pip
             - pytest-cov
-            - python ${{ python_min }}
+            - python ${{ python_min }}.*
         script:
           - slugify --help
           - ${{ pytest_args }}
@@ -90,8 +89,8 @@ outputs:
             - test.py
         requirements:
           run:
-            - pip
             - pytest-cov
+            - python ${{ python_min }}.*
         script:
           - slugify --help
           - ${{ pytest_args }}

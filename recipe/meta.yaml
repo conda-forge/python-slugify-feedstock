@@ -1,4 +1,5 @@
-{% set version = "8.0.4" %}
+{% set pytest_args = "pytest test.py -vv --cov=slugify --cov-branch --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=92" %}
+{% set version = "9.0.0" %}
 
 {% set PYTHON = PYTHON | default("$PYTHON") %}
 
@@ -9,15 +10,15 @@ package:
   version: {{ version }}
 
 source:
-  - url: https://pypi.org/packages/source/p/python-slugify/python-slugify-{{ version }}.tar.gz
-    sha256: 59202371d1d05b54a9e7720c5e038f928f45daaffe41dd10822f3907b937c856
+  - url: https://files.pythonhosted.org/packages/source/p/python-slugify/python_slugify-{{ version }}.tar.gz
+    sha256: 1cd20fe7ebf941b11964a92aba9e5319edfe18606276c6e2481b92e737cde44a
   - url: https://raw.githubusercontent.com/un33k/python-slugify/v{{ version }}/test.py
-    sha256: 96a2fb00cb9a225c473cd0bcfab01286f16d47b51368a986a250e00a50ddcc92
+    sha256: f10f27fa48230d93c34826c7e3c03336ea9fa5103c5a0706174c586470403eda
 
 build:
-  number: 1
+  number: 0
   noarch: python
-  script: 
+  script:
     - {{ PYTHON }} -m pip install . --no-deps -vv --no-build-isolation --disable-pip-version-check
   entry_points:
     - slugify = slugify.__main__:main

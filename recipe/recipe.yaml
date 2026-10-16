@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "9.0.0"
+  version: "9.1.3"
   python_check_max: "3.14"
 
 recipe:
@@ -11,9 +11,7 @@ recipe:
 
 source:
   - url: https://files.pythonhosted.org/packages/source/p/python-slugify/python_slugify-${{ version }}.tar.gz
-    sha256: 1cd20fe7ebf941b11964a92aba9e5319edfe18606276c6e2481b92e737cde44a
-  - url: https://raw.githubusercontent.com/un33k/python-slugify/v${{ version }}/test.py
-    sha256: f10f27fa48230d93c34826c7e3c03336ea9fa5103c5a0706174c586470403eda
+    sha256: 90e997f2e0987239ce95e12f700086eb18e1d1d3ee22624fbbdbd095afca42b6
 
 build:
   number: 0
@@ -54,14 +52,16 @@ outputs:
             - ${{ python_check_max }}.*
       - files:
           source:
-            - test.py
+            - tests/
+            - tools/
+            - README.md
         requirements:
           run:
             - pytest-cov
             - python ${{ python_min }}.*
         script:
           - slugify --help
-          - ${{ pytest_args }}
+          - pytest -vvv tests/
 
   - package:
       name: python-slugify-with-unidecode
@@ -80,14 +80,16 @@ outputs:
             - ${{ python_check_max }}.*
       - files:
           source:
-            - test.py
+            - tests/
+            - tools/
+            - README.md
         requirements:
           run:
             - pytest-cov
             - python ${{ python_min }}.*
         script:
           - slugify --help
-          - ${{ pytest_args }}
+          - pytest -vvv tests/
 
 about:
   license: MIT

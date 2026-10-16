@@ -3,15 +3,16 @@ schema_version: 1
 
 context:
   version: "9.1.3"
-  python_check_max: "3.14"
+  python_check_max: "3.15"
+  summary: A Python slugify application that also handles Unicode
 
 recipe:
   name: python-slugify-split
   version: ${{ version }}
 
 source:
-  - url: https://files.pythonhosted.org/packages/source/p/python-slugify/python_slugify-${{ version }}.tar.gz
-    sha256: 90e997f2e0987239ce95e12f700086eb18e1d1d3ee22624fbbdbd095afca42b6
+  url: https://files.pythonhosted.org/packages/source/p/python-slugify/python_slugify-${{ version }}.tar.gz
+  sha256: 90e997f2e0987239ce95e12f700086eb18e1d1d3ee22624fbbdbd095afca42b6
 
 build:
   number: 0
@@ -23,7 +24,7 @@ outputs:
       number: 0
       noarch: python
       script:
-        - ${{ PYTHON }} -m pip install . --no-deps -vv --no-build-isolation --disable-pip-version-check
+        - ${{ PYTHON }} -m pip install . --no-deps -vv --no-build-isolation --disable-pip-version-check --check-build-dependencies
       python:
         entry_points:
           - slugify = slugify.__main__:main
@@ -44,24 +45,20 @@ outputs:
         # [unidecode]
         - unidecode >=1.1.1
     tests:
+      - package_contents:
+          strict: true
+          site_packages:
+            - slugify/**
+            - slyugify-${{ version }}.dist-info/**
       - python:
           imports: slugify
           pip_check: true
           python_version:
             - ${{ python_min }}.*
             - ${{ python_check_max }}.*
-      - files:
-          source:
-            - tests/
-            - tools/
-            - README.md
-        requirements:
-          run:
-            - pytest-cov
-            - python ${{ python_min }}.*
-        script:
+      - script:
           - slugify --help
-          - pytest -vvv tests/
+          - slugify --version
 
   - package:
       name: python-slugify-with-unidecode
@@ -80,21 +77,26 @@ outputs:
             - ${{ python_check_max }}.*
       - files:
           source:
-            - tests/
-            - tools/
+            - tests/**
+            - tools/**
             - README.md
         requirements:
           run:
+            # just test anyascii for now until testing/documentaiton for CEP-44 is resolved
+            - anyascii
             - pytest-cov
             - python ${{ python_min }}.*
         script:
           - slugify --help
-          - pytest -vvv tests/
+          - coverage run --source=slugify --branch -m pytest -vv --tb=long --color=yes
+          - coverage report --show-missing --skip-covered --fail-under=100
+    about:
+      summary: ${{ summary }} (with [unidecode])
 
 about:
   license: MIT
   license_file: LICENSE
-  summary: A Python slugify application that also handles Unicode
+  summary: ${{ summary }}
   homepage: https://pypi.org/project/python-slugify
   repository: https://github.com/un33k/python-slugify
 
